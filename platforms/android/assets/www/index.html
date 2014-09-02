@@ -10,6 +10,7 @@
 <script>
 var swf = {};
 swf.donde=0;
+/* función que se carga al ejecutar la app */
 function cargaInicial() {
    if(window.cordova) {
       document.addEventListener("backbutton", _backButton, false); 
@@ -24,6 +25,7 @@ function cargaInicial() {
       });
    } 
 }
+/* previene que se salga de la app con un 'back'  */
 function _backButton() {
    if(swf.donde==-1) { navigator.app.exitApp(); }
    else if(swf.donde== 0) {
@@ -32,6 +34,7 @@ function _backButton() {
    }
 }
 swf.mensaje = 0;
+/* muestra mensajes en pantalla */
 function mensajes(ms,duracion) {
    if(swf.mensaje) { clearTimeout(swf.mensaje); }
    if(duracion === undefined) { duracion = 3; }
